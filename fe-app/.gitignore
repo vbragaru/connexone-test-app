@@ -1,3 +1,4 @@
 # ingore file
 node_modules
 .vscode
+build
