@@ -3,10 +3,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var prometheus = require('./middlewares/prometheus');
 var time = require('./routes/time');
 
 var app = express();
 
+app.use(prometheus);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
