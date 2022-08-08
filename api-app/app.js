@@ -4,6 +4,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 
+const dotenv  = require('dotenv');
+(process.env.APP_ENV && dotenv.config({ path: process.env.APP_ENV })) || dotenv.config({ path: '.env.dev' });
+
 var prometheus = require('./middlewares/prometheus');
 var authorization = require('./middlewares/authorization');
 var time = require('./routes/time');
