@@ -1,12 +1,16 @@
 import './App.css';
 import Timer from './components/time/Time'
+import Metrics from './components/metrics/Metrics'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div>
         <Timer></Timer>
-      </header>
+      </div>
+      <div>
+        <Metrics></Metrics>
+      </div>
     </div>
   );
 }

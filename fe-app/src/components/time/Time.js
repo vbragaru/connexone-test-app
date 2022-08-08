@@ -29,9 +29,9 @@ export default class Timer extends Component {
 
     async getServerTime() {
         let config = {
-            headers: { 'Authorization': 'mysecrettoken' },
+            headers: { 'Authorization': process.env.REACT_APP_API_AUTH_TOKEN },
         };
-        const serverTime = await axios.get('http://localhost:3001/api/v1/time', config);
+        const serverTime = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/time`, config);
         return serverTime.data.epoch;
     }
 
@@ -47,7 +47,7 @@ export default class Timer extends Component {
         this.serverTimeTick();
         this.clientTimeTick();
 
-        this.serverInterval = setInterval(() => this.serverTimeTick(), 10000);
+        this.serverInterval = setInterval(() => this.serverTimeTick(), 30000);
         this.clientInterval = setInterval(() => this.clientTimeTick(), 1000);
     }
 
