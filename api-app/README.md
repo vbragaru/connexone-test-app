@@ -16,3 +16,10 @@ Open the browser and navigate to:
 - [http://localhost:3000/api/v1/time](http://localhost:3000/api/v1/time) – Epoch Time Api based on JSON Schema from Specifications.
 - [http://localhost:3000/api/v1/metrics](http://localhost:3000/api/v1/metrics) – Prometheus Metrics.
 - [http://localhost:3000](http://localhost:3000) – Frontend Application as per Specifications.
+
+## Release
+Release the full application as .tgz file for distribution
+
+```sh
+$ npm run release
+```
